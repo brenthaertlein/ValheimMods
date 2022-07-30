@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace ValheimMods
+namespace ExampleMod
 {
     [HarmonyPatch(typeof(InventoryGui))]
     public static class InventoryGuiPatch

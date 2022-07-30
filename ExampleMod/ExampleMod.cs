@@ -11,7 +11,7 @@ using JetBrains.Annotations;
 using Jotunn.Utils;
 using UnityEngine;
 
-namespace ValheimMods
+namespace ExampleMod
 {
     [BepInPlugin(PluginId, PluginName, PluginVersion)]
     [BepInDependency(Jotunn.Main.ModGuid)]
