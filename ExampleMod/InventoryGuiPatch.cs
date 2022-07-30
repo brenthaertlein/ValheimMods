@@ -6,11 +6,13 @@ using UnityEngine.UI;
 
 namespace ValheimMods
 {
-    [HarmonyPatch(typeof(InventoryGui), nameof(InventoryGui.Awake))]
-    public static class InventoryGuiAwakePatch
+    [HarmonyPatch(typeof(InventoryGui))]
+    public static class InventoryGuiPatch
     {
         [UsedImplicitly]
-        public static void Postfix(InventoryGui __instance)
+        [HarmonyPatch(nameof(InventoryGui.Awake))]
+        [HarmonyPostfix]
+        public static void Awake_Postfix(InventoryGui __instance)
         {
             Debug.Log(nameof(InventoryGui.Awake) + " Postfix");
             var tab = Auga.API.PlayerPanel_AddTab("tabID", null, "Space Powers", OnTabSelected);

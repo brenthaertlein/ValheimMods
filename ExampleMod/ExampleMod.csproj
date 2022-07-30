@@ -70,7 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InventoryGuiAwakePatch.cs" />
+    <Compile Include="InventoryGuiPatch.cs" />
     <Compile Include="ExampleMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
