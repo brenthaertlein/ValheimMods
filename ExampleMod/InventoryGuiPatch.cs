@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using JetBrains.Annotations;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -14,7 +15,7 @@ namespace ExampleMod
         [HarmonyPostfix]
         public static void Awake_Postfix(InventoryGui __instance)
         {
-            Debug.Log(nameof(InventoryGui.Awake) + " Postfix");
+            Main.Log(level: LogLevel.DEBUG, text: "Awake_Postfix");
             var tab = Auga.API.PlayerPanel_AddTab("tabID", null, "Space Powers", OnTabSelected);
             var content = tab.ContentGO;
             var layout = content.AddComponent<VerticalLayoutGroup>();
@@ -51,7 +52,7 @@ namespace ExampleMod
 
         private static void OnTabSelected(int index)
         {
-            Debug.Log("Space Powers Tab Selected");
+            Main.Log(String.Format("Space Powers Tab Selected; index {0}", index));
         }
 
     }
